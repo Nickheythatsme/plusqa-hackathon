@@ -1,0 +1,25 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "yarn run build && node dist/src/index.js",
+    "test": "yarn run build && ./node_modules/mocha/bin/mocha dist/tests/*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.1",
+    "@types/puppeteer": "^2.0.1"
+  },
+  "dependencies": {
+    "@types/redis": "^2.8.17",
+    "mocha": "^7.1.1",
+    "puppeteer": "^3.0.0",
+    "redis": "^3.0.2"
+  }
+}
