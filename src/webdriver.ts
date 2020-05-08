@@ -1,4 +1,3 @@
-//import * as puppeteer from 'puppeteer';
 import puppeteer from 'puppeteer';
 
 export interface WebdriverOptions extends puppeteer.LaunchOptions {
@@ -7,7 +6,7 @@ export interface WebdriverOptions extends puppeteer.LaunchOptions {
 
 export default class Webdriver {
     public static async init(opts?: WebdriverOptions) {
-        let browser = await puppeteer.launch(opts);
+        let browser = await puppeteer.launch({headless: false});
         let page = await browser.newPage();
         if (opts && opts.url) {
             await page.goto(opts.url);
