@@ -5,7 +5,7 @@ export interface WebdriverOptions extends puppeteer.LaunchOptions {
 }
 
 export default class Webdriver {
-    public static async init(opts?: WebdriverOptions) {
+    public static async init(opts?: WebdriverOptions): Promise<Webdriver> {
         let browser = await puppeteer.launch({headless: false});
         let page = await browser.newPage();
         if (opts && opts.url) {
